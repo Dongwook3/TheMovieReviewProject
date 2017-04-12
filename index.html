@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch' rel='stylesheet' type='text/css'>
+<link href="css/audioPlayerStyles.css" rel="stylesheet"  type="text/css">
+<script src="script/TweenMax.min.js"></script>
+<script src="script/modernizr_custom.js"></script>
+
+<title>The Movie Review Project</title>
+</head>
+
+<body>
+
+
+<!-- graphic part of video player -->
+<div id="wrapper">
+	<h1>The Movie Review Project</h1>
+	
+	<!-- these are draggabel buttons -->
+	<div id="buttonHolder">
+		<img src="images/button1.png" id="Sci-Fi" draggable="true" alt="Sci-Fi button">
+		<img src="images/button2.png" id="Action" draggable="true" alt="Action button">
+		<img src="images/button3.png" id="Anime" draggable="true" alt="Anime button">
+		<p>Drag to the target button</p>
+	</div>
+	
+	<!-- this is the drop target -> drag a button here -->
+	<div class="tracks" id="tracks">
+		<img src="images/targetImg.png" id="theTarget" alt="drag here">
+		<img src="images/newBarBG.jpg" id="playerBar" alt="playerBar">
+	    <p id="genreTitle">&laquo; Drag here!</p>
+	</div>
+	
+	<!-- tracks get populated here -->
+	<ul class="trackHolder"></ul>
+
+	<video id="myVideoPlayer" width="500">
+		<source src="video/ghost.mp4" type="video/mp4"/>
+		<source src="video/ghost.ogv" type="video/ogg"/>
+		your browser doesn't support video
+	</video>
+	<!-- the video controls (I'd probably do this differently / update these with icons from font-awsome) -->
+	<div id="controlBar">
+		<div id="playButton"></div>
+	    <div id="shuffle"></div>
+	    <div id="muteButton"></div>
+	    <input id="volumeSlider" type="range" max="100" value="100">
+	    <p id="trackTime">Track Time</p>
+	    <progress id="prog" max="100"></progress>	    
+	</div>
+	<!-- a video tag with a source - one that doesn't necessarily have to play - gives us a way to find out what video type the browser will handle (or you could use Modernizr methods) -->
+	<p id="genreTitle"></p>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="script/mediaPlayer.js"></script>
+</body>
+</html>
